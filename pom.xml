@@ -17,6 +17,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+    <tomcat.version>8.5.13</tomcat.version>
   </properties>
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -25,20 +26,6 @@
   </parent>
 
   <dependencies>
-    <!--tomcat-->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-tomcat</artifactId>
-    </dependency>
-    <!--<dependency>-->
-      <!--<groupId>org.apache.tomcat.embed</groupId>-->
-      <!--<artifactId>tomcat-embed-jasper</artifactId>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>org.apache.tomcat.embed</groupId>-->
-      <!--<artifactId>tomcat-embed-el</artifactId>-->
-    <!--</dependency>-->
-
 
 
     <dependency>
@@ -48,6 +35,10 @@
       <scope>test</scope>
     </dependency>
     <!--spring boot-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-autoconfigure</artifactId>
