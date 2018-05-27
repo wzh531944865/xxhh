@@ -19,11 +19,11 @@ public class Test {
 //        return userDao.Aa();
 //    }
 
-    @RequestMapping("/test2")
-    public UserInfo test2(){
-
-        UserInfo userInfo = userDao.queryByUserId();
-        return userInfo;
-    }
+//    @RequestMapping("/test2")
+//    public UserInfo test2(){
+//
+//        UserInfo userInfo = userDao.queryByUserId();
+//        return userInfo;
+//    }
 
 }
