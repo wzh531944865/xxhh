@@ -8,6 +8,7 @@ import com.gm.api.vo.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -19,7 +20,7 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping("register.do")
+    @RequestMapping(value = "register.do", method = RequestMethod.POST)
     public APIResponse<UserInfo> register(@RequestBody RegisterParam param) {
         APIResponse apiResponse = new APIResponse();
         apiResponse.setCode(0);
@@ -28,7 +29,7 @@ public class UserController {
         return apiResponse;
     }
 
-    @RequestMapping("login.do")
+    @RequestMapping(value = "login.do", method = RequestMethod.POST)
     public APIResponse<UserInfo> register(@RequestBody LoginParam param) {
         APIResponse apiResponse = new APIResponse();
         apiResponse.setCode(0);
@@ -37,6 +38,7 @@ public class UserController {
         if (!userService.checkUserPassword(param.getUserId(), param.getPassword())) {
             apiResponse.setCode(-1);
             apiResponse.setMessage("失败");
+            return apiResponse;
         }
         UserInfo userInfo = userService.login(param.getUserId());
         apiResponse.setData(userInfo);

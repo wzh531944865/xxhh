@@ -22,9 +22,8 @@ public interface UserPasswordDao {
             "insert into ",
             TABLE_NAME,
             "(user_id,password)",
-            " values (#{userId},#{password})",
-            " is_delete =0"})
-    int inserUserPassword(UserPassword param);
+            " values (#{userId},#{password})"})
+    int insertUserPassword(UserPassword param);
 
 
     @Select({"SELECT ", ALL_FIELDS, " FROM ", TABLE_NAME, " WHERE user_id = #{userId}"})

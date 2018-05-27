@@ -47,6 +47,9 @@ public class UserService {
 
     public boolean checkUserPassword(String userId, String password) { //todo 修改为非明文
         UserPassword userPassword = userPasswordDao.queryByUserId(userId);
+        System.out.println(userPassword);
+        System.out.println(password);
+        System.out.println(userPassword.getPassword());
         return userPassword != null && userPassword.getPassword().equals(password);
     }
 
@@ -68,7 +71,7 @@ public class UserService {
         UserPassword userPassword = new UserPassword();
         userPassword.setUserId(userId);
         userPassword.setPassword(password);
-        return userPasswordDao.inserUserPassword(userPassword);
+        return userPasswordDao.insertUserPassword(userPassword);
 
     }
 
@@ -78,7 +81,7 @@ public class UserService {
     }
 
     private String createUserToken() {
-        String userToken = Long.toString(new Date().getTime());
+        String userToken = "token" + Long.toString(new Date().getTime());
         return userToken;
     }
 

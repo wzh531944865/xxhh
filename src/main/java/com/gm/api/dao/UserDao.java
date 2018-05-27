@@ -23,14 +23,13 @@ public interface UserDao {
             "insert into ",
             TABLE_NAME,
             "(user_id,nick_name,name,gender,age,mobile_no,email,id_code,user_token)",
-            " values (#{userId},#{nickName},#{name},#{gender},#{age},#{mobileNo},#{email},#{idCode},#{userToken})",
-            " is_delete =0"})
+            " values (#{userId},#{nickName},#{name},#{gender},#{age},#{mobileNo},#{email},#{idCode},#{userToken})"})
     int insertUserInfo(UserInfo param);
 
 
     @Update({
-            "Update set user_token=#{userToken}  ",
-                  " FROM ", TABLE_NAME, " WHERE user_id=#{userId} and is_delete=0"})
+            "Update", TABLE_NAME , " set user_token=#{userToken}  ",
+            " WHERE user_id=#{userId} and is_delete=0"})
     int updateUserToken(UserInfo param);
 
 }
