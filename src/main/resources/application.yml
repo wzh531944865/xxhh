@@ -1,0 +1,35 @@
+#server:
+#  port: 9090
+#  tomcat:
+#    uri-encoding: UTF-8
+
+#spring:
+#  datasource:
+#    url: jdbc:mysql://sh-cdb-gx3qmzuz.sql.tencentcdb.com:63132/user?characterEncoding=UTF-8
+#    username: root
+#    password: rainbow_six
+#    driver-class-name: com.mysql.jdbc.Driver
+#  jpa:
+#    database: MYSQL
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL5Dialect
+
+mysql:
+  gm:
+    database: user
+    host: sh-cdb-gx3qmzuz.sql.tencentcdb.com
+
+  username: root
+  password: rainbow_six
+  port: 63132
+  maxActive: 20
+  minIdle: 1
+  maxWait: 3000
+  timeBetweenEvictionRunsMillis: 60000
+  minEvictableIdleTimeMillis: 300000
+  testWhileIdle: true
