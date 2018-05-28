@@ -35,12 +35,12 @@ public class UserService {
         return userDao.queryByUserId(userId);
     }
 
-    public int register(String nickName, String password, String email, String mobileNo) {
+    public String register(String nickName, String password, String email, String mobileNo) {
         String userId = createUserId();
 
         createAccount(userId, nickName, email, mobileNo);
         createUserPassword(userId, password);
-        return 1;//todo
+        return userId;//todo
 
 
     }
