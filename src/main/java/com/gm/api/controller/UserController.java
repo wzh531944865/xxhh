@@ -47,6 +47,7 @@ public class UserController {
             String userId = userService.register(param.getNickName(), password, param.getEmail(), param.getMobileNo());
             userInfo.setUserId(userId);
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println(e);
             apiResponse.setCode(-1);
             apiResponse.setMessage("失败");
@@ -77,7 +78,8 @@ public class UserController {
                 return apiResponse;
             }
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
+//            System.out.println(e.printStackTrace());
             apiResponse.setCode(-1);
             apiResponse.setMessage("失败");
             return apiResponse;
@@ -107,6 +109,7 @@ public class UserController {
             userInfo.setUserId(userId);
             apiResponse.setData(userInfo);
         }catch (Exception e){
+            e.printStackTrace();
             apiResponse.setCode(-1);
             apiResponse.setMessage("失败");
         }
