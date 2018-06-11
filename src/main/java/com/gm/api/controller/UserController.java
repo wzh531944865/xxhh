@@ -29,7 +29,7 @@ public class UserController {
 
     @ApiOperation(
             value = "用户注册",
-            notes = "复杂对象，传在body中 加密方式  AES/CBC/PKCS5Padding + Base64 key '_dabanyexiangkey'  iv '_dabanyexiangiv_'" +
+            notes = "复杂对象，传在body中 加密方式  AES/CBC/PKCS5Padding + Base64 key和 iv见 服务器信息" +
                     "示例 123   加密结果为 ROlIm30HmTccUNM8N2dScA==",
             httpMethod = "POST",
             produces = "application/json"
