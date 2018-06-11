@@ -78,6 +78,9 @@ public class UserController {
             }
         } catch (Exception e) {
             System.out.println(e);
+            apiResponse.setCode(-1);
+            apiResponse.setMessage("失败");
+            return apiResponse;
         }
         UserInfo userInfo = userService.login(param.getUserId());
         apiResponse.setData(userInfo);
